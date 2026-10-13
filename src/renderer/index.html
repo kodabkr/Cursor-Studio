@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>Cursor Studio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true"><defs>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="m5 3 14 10-7 1-3 7-4-18Z"/><path d="m12 14 5 6"/></symbol>
+    <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1.5"/><rect x="14" y="4" width="6" height="6" rx="1.5"/><rect x="4" y="14" width="6" height="6" rx="1.5"/><rect x="14" y="14" width="6" height="6" rx="1.5"/></symbol>
+    <symbol id="icon-history" viewBox="0 0 24 24"><path d="M3 10a9 9 0 1 1 2 8M3 4v6h6M12 7v5l3 2"/></symbol>
+    <symbol id="icon-folder" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10H3Z"/></symbol>
+    <symbol id="icon-refresh" viewBox="0 0 24 24"><path d="M20 9a8 8 0 0 0-14-4L3 8m0-5v5h5M4 15a8 8 0 0 0 14 4l3-3m0 5v-5h-5"/></symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m8 10 4 4 4-4"/></symbol>
+    <symbol id="icon-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v5h16v-5"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="icon-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v.5"/></symbol>
+    <symbol id="icon-link" viewBox="0 0 24 24"><path d="M14 4h6v6m0-6L10 14M10 4H4v16h16v-6"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="icon-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 4-6 5 7"/></symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V6a4 4 0 0 1 8 0v4M12 14v3"/></symbol>
+    <symbol id="icon-spark" viewBox="0 0 24 24"><path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z"/></symbol>
+  </defs></svg>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark"><svg><use href="#icon-arrow"/></svg></span><span>cursor<span class="brand-second">studio</span></span></div>
+      <div class="sidebar-section-label">YOUR WORKSPACE</div>
+      <nav aria-label="Main navigation">
+        <button class="nav-item active" data-view="cursors" aria-current="page"><svg><use href="#icon-grid"/></svg><span>Cursors</span><span class="nav-count" id="nav-count">0</span></button>
+        <button class="nav-item" data-view="backups"><svg><use href="#icon-history"/></svg><span>Backups</span></button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-tip"><div class="tip-icon"><svg><use href="#icon-shield"/></svg></div><strong>A little peace of mind.</strong><p>Original cursors are saved before your first change. Restore them whenever you like.</p></div>
+        <button class="sidebar-link" id="open-samples"><svg><use href="#icon-folder"/></svg>Open sample cursors<svg class="small"><use href="#icon-link"/></svg></button>
+        <div class="sidebar-version"><span class="status-dot"></span>LOCAL &amp; PRIVATE<span id="app-version">v1.0.0</span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="page-header"><div><div class="eyebrow">ROBLOX PERSONALIZATION</div><h1 id="page-title">Your game. Your cursor.</h1><p id="page-subtitle">Give the little things a personal touch.</p></div><span class="header-label"><span class="status-dot"></span>DESKTOP EDITION</span></header>
+
+      <section class="installation-card" aria-label="Roblox installation">
+        <div class="installation-icon"><svg><use href="#icon-folder"/></svg></div>
+        <div class="installation-details"><label for="installation-select" class="field-label">ROBLOX INSTALLATION · NEWEST MODIFIED FIRST</label><div class="select-wrap"><select id="installation-select" disabled><option value="">Looking for Roblox…</option></select><svg><use href="#icon-chevron"/></svg></div><p id="installation-path" class="installation-path">Checking your local installation folders</p><p id="installation-date" class="installation-date" hidden></p></div>
+        <span id="installation-status" class="installation-status">SCANNING</span>
+        <div class="installation-actions"><button class="button button-quiet icon-button" id="scan-button" title="Scan for Roblox installations" aria-label="Scan for Roblox installations"><svg><use href="#icon-refresh"/></svg></button><button class="button button-secondary" id="browse-button"><svg><use href="#icon-folder"/></svg>Browse</button></div>
+      </section>
+
+      <div id="running-note" class="notice warning" hidden><svg><use href="#icon-info"/></svg><span>Roblox is running. Close the game and scan again before applying changes, then reopen it to see your new cursors.</span></div>
+      <div id="preview-note" class="notice" hidden><svg><use href="#icon-info"/></svg><span>Preview only — open this app through Electron to detect and change your Roblox installation.</span></div>
+
+      <div class="content-scroll" id="content-scroll">
+        <section id="cursors-view">
+          <div class="section-heading"><div class="heading-with-count"><h2>In-game cursors</h2><span class="count-pill" id="cursor-count">0</span></div><div class="section-hint"><span class="hint-dot"></span>Drop a PNG onto any cursor</div></div>
+          <div class="empty-state" id="empty-state" hidden><div class="empty-icon"><svg><use href="#icon-arrow"/></svg></div><h2 id="empty-title">Let’s find your Roblox.</h2><p id="empty-description">We couldn’t find an installation automatically. Browse to your Roblox folder, or install and run Roblox once, then scan again.</p><div class="empty-actions"><button class="button button-primary" id="empty-browse"><svg><use href="#icon-folder"/></svg>Choose Roblox folder</button><button class="button button-secondary" id="empty-scan"><svg><use href="#icon-refresh"/></svg>Scan again</button></div><span class="empty-footnote">Your cursor files appear here when an installation is selected.</span></div>
+          <div class="cursor-grid" id="cursor-grid"></div>
+
+          <section class="playground" id="playground" hidden aria-label="Cursor preview playground">
+            <div class="playground-header"><div class="heading-with-count"><svg><use href="#icon-spark"/></svg><h2>Take it for a spin</h2><span class="preview-pill">LIVE PREVIEW</span></div><label class="switch-label"><span>Shift lock</span><input type="checkbox" id="shift-toggle"><span class="switch-track" aria-hidden="true"></span></label></div>
+            <div class="playground-area" id="playground-area"><div class="playground-copy"><span class="playground-dots" aria-hidden="true">＋</span><strong>Move your cursor around.</strong><span>Hover a target. Hold a click. Try shift lock.</span></div><div class="playground-targets"><button class="preview-target" id="hover-target"><svg><use href="#icon-arrow"/></svg><span>Hover me</span></button><button class="preview-target" id="click-target"><svg><use href="#icon-check"/></svg><span>Hold a click</span></button></div><div class="preview-mode"><span class="status-dot"></span><span id="preview-mode-label">Normal cursor</span></div></div>
+            <p class="playground-note"><svg><use href="#icon-info"/></svg>This previews local images. Games can supply their own cursors. Drag pressed is used for drag interactions; there is no universal click cursor.</p>
+          </section>
+          <p class="content-note" id="content-note" hidden><svg><use href="#icon-info"/></svg>Changes apply to this installation. Roblox updates may create a new version folder. Reopen Cursor Studio after an update to customize it.</p>
+        </section>
+
+        <section id="backups-view" hidden><div class="section-heading"><div class="heading-with-count"><h2>Originals, safely tucked away.</h2><span class="count-pill" id="backup-count">0</span></div><button class="button button-secondary" id="open-backups"><svg><use href="#icon-folder"/></svg>Open backup folder</button></div><p class="backup-intro">Your original images are saved before the first replacement. Restoring a cursor brings those original files back to the selected installation.</p><div id="backup-list" class="backup-list"></div><div class="backup-empty" id="backup-empty"><svg><use href="#icon-shield"/></svg><h3>No backups yet.</h3><p>Apply your first cursor change and we’ll save the original here.</p></div><button class="button button-secondary restore-all" id="restore-all" hidden><svg><use href="#icon-history"/></svg>Restore all originals</button></section>
+      </div>
+
+      <footer class="apply-bar"><div class="apply-status"><span class="apply-status-icon" id="apply-status-icon"><svg><use href="#icon-check"/></svg></span><div><strong id="apply-status-title">Everything is up to date</strong><span id="apply-status-description">Choose a PNG to start making it yours.</span></div></div><div class="apply-actions"><button class="button button-quiet" id="discard-button" hidden>Discard changes</button><button class="button button-primary" id="apply-button" disabled><span>Apply changes</span><svg><use href="#icon-arrow"/></svg></button></div></footer>
+    </main>
+  </div>
+
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="false"></div>
+  <dialog id="confirm-dialog"><form method="dialog"><div class="dialog-icon"><svg><use href="#icon-history"/></svg></div><h2 id="confirm-title">Restore original cursors?</h2><p id="confirm-description">Your original cursor files will replace the current images.</p><div class="dialog-actions"><button class="button button-secondary" value="cancel">Cancel</button><button class="button button-primary" id="confirm-accept" value="confirm">Restore originals</button></div></form></dialog>
+  <script src="renderer.js"></script>
+</body>
+</html>

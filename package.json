@@ -1,0 +1,32 @@
+{
+  "name": "roblox-cursor-studio",
+  "version": "1.0.0",
+  "description": "Drag, preview, and replace Roblox cursors with automatic original backups.",
+  "main": "src/main.cjs",
+  "author": "Cursor Studio",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test test/*.test.cjs",
+    "test:ui": "node scripts/smoke-test.cjs",
+    "build": "electron-builder --win portable",
+    "build:dir": "electron-builder --win --dir"
+  },
+  "devDependencies": {
+    "electron": "44.7.1",
+    "electron-builder": "26.15.3",
+    "playwright": "1.64.0"
+  },
+  "build": {
+    "appId": "app.cursorstudio.roblox",
+    "productName": "Cursor Studio",
+    "asar": true,
+    "directories": { "output": "release" },
+    "files": ["src/**/*", "assets/**/*", "package.json"],
+    "win": {
+      "target": [{ "target": "portable", "arch": ["x64"] }],
+      "signAndEditExecutable": false,
+      "artifactName": "Cursor-Studio-${version}-Windows.exe"
+    }
+  }
+}
