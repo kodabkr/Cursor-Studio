@@ -4,9 +4,9 @@ Replace the built-in cursors in your Roblox Player installation with your own PN
 
 ## Download for Windows
 
-**[Download Cursor Studio (.exe)](https://github.com/kodabkr/CursorManager/releases/latest/download/Cursor-Studio-1.0.0-Windows.exe)**
+**[Download Cursor Studio (.exe)](https://github.com/kodabkr/Cursor-Studio/releases/latest/download/Cursor-Studio-1.0.0-Windows.exe)**
 
-The portable app runs on Windows 10/11 (64-bit). Download it and double-click it—no installer, Node.js, or Git needed. You can also find the executable on the [latest release page](https://github.com/kodabkr/CursorManager/releases/latest).
+The portable app runs on Windows 10/11 (64-bit). Download it and double-click it—no installer, Node.js, or Git needed. You can also find the executable on the [latest release page](https://github.com/kodabkr/Cursor-Studio/releases/latest).
 
 ## Use it
 
@@ -26,8 +26,8 @@ After a Roblox update, click **Rescan** and apply your PNGs to the newest instal
 On Windows, install [Node.js](https://nodejs.org/) **22.12 or newer** and [Git](https://git-scm.com/), then open PowerShell:
 
 ```powershell
-git clone https://github.com/kodabkr/CursorManager.git
-cd CursorManager
+git clone https://github.com/kodabkr/Cursor-Studio.git
+cd Cursor-Studio
 npm ci
 npm start
 ```
